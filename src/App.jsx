@@ -32,8 +32,8 @@ const App = () => {
                       </Route>
                   </Routes>
             </Layout>
-          </div>
-          <div className="footer">
+
+            <div className="footer">
               <Typography.Title level={5} style={{ color: 'white', textAlign: 'center', background: 'black'}}>
                   Cryptoverse <br></br>
                   All rights reserverd <br></br>
@@ -44,7 +44,7 @@ const App = () => {
                     <Link to='/news'>news</Link>
                 </Space>
               </Typography.Title>
-              
+            </div>
           </div>
       </div>
   );

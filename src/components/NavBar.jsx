@@ -3,18 +3,18 @@ import { Button, Menu, Typography, Avatar } from 'antd';
 import { Link } from 'react-router-dom';
 import { HomeOutlined, MoneyCollectOutlined, BulbOutlined, FundOutlined, MenuOutlined } from '@ant-design/icons';
 
-// TODO 引入icon 
 import icon from '../images/dogo_cryp.png';
+import calc from 'postcss-calc';
 
 const NavBar = () => {
     return (
-        <div className='nav-container'>
+        <div className='nav-container' >
             <div className="logo-container">
                 <Avatar src={icon} size='large' />
                 <Typography.Title level={2} className='logo'>
                     <Link to='/'>Crytoverse</Link>  
                 </Typography.Title>  
-                <Menu theme='dark'>
+                <Menu theme='dark' inlineIndent={10} style={{ height: '86vh'}}>
                     <Menu.Item icon={<HomeOutlined />}>
                         <Link to='/'>Home</Link>
                     </Menu.Item>

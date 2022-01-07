@@ -1,4 +1,6 @@
-.app {
+.App {
     display: flex;
-    
+    .main {
+        flex: 1;
+    }
 }
