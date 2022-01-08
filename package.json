@@ -37,7 +37,6 @@
     "jest": "^27.4.3",
     "jest-resolve": "^27.4.2",
     "jest-watch-typeahead": "^1.0.0",
-    "millify": "^4.0.0",
     "mini-css-extract-plugin": "^2.4.5",
     "moment": "^2.29.1",
     "postcss": "^8.4.4",
@@ -92,6 +91,8 @@
     ]
   },
   "devDependencies": {
+    "less-loader": "^10.2.0",
+    "millify": "^4.0.0",
     "node-sass": "^7.0.1",
     "sass": "^1.46.0",
     "sass-loader": "^12.4.0"
