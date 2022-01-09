@@ -50,7 +50,33 @@ export default configureStore({
 })
 ```
 
-* 3. 子组件的使用案例:
+* 3. 通过react-redux将store引入到主入口
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './app/store';
+
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Router>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </Router>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+reportWebVitals();
+```
+
+* 4. 子组件的使用案例:
 ```
 import React from 'react';
 import { Typography, Row, Col, Statistic } from 'antd';
