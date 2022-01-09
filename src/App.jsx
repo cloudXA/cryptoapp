@@ -23,7 +23,7 @@ const App = () => {
                       <Route path='/cryptoDetail/:coinId' element={<CryptoDetails />}>
                           
                       </Route>
-                      <Route path='/exchanges' element={<Exchanges />}>
+                      <Route path='/exchange' element={<Exchanges />}>
                           
                       </Route>
                       <Route path='/news' element={<News />}>
@@ -38,10 +38,10 @@ const App = () => {
                   All rights reserverd <br></br>
 
                   <Space>
-                    <Link to='/'>Home</Link>
-                    <Link to='/exchange'>exchanges</Link>
-                    <Link to='/news'>news</Link>
-                </Space>
+                      <Link to='/'>Home</Link>
+                      <Link to='/exchange'>exchanges</Link>
+                      <Link to='/news'>news</Link>
+                  </Space>
               </Typography.Title>
             </div>
           </div>
