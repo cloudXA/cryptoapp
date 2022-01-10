@@ -4,6 +4,7 @@ import { Layout, Typography, Space } from 'antd';
 import { NavBar, Homepage, Cryptocurrencies, News, CryptoDetails, Exchanges } from './components';
 import 'antd/dist/antd.min.css';
 import './App.scss';
+import './app.css';
 
 const App = () => {
   return (

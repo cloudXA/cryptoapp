@@ -39,7 +39,6 @@
     "jest-watch-typeahead": "^1.0.0",
     "mini-css-extract-plugin": "^2.4.5",
     "moment": "^2.29.1",
-    "postcss": "^8.4.4",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^6.2.1",
     "postcss-normalize": "^10.0.1",
@@ -59,7 +58,6 @@
     "semver": "^7.3.5",
     "source-map-loader": "^3.0.0",
     "style-loader": "^3.3.1",
-    "tailwindcss": "^3.0.2",
     "terser-webpack-plugin": "^5.2.5",
     "web-vitals": "^2.1.2",
     "webpack": "^5.64.4",
@@ -91,11 +89,14 @@
     ]
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.2",
     "less-loader": "^10.2.0",
     "millify": "^4.0.0",
     "node-sass": "^7.0.1",
+    "postcss": "^8.4.5",
     "sass": "^1.46.0",
-    "sass-loader": "^12.4.0"
+    "sass-loader": "^12.4.0",
+    "tailwindcss": "^3.0.12"
   },
   "jest": {
     "roots": [

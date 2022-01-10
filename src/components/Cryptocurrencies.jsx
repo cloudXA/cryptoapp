@@ -6,7 +6,7 @@ import millify from 'millify';
 
 const Cryptocurrencies = ({ simplified }) => {
     const count = simplified ? 10 : 100;
-    const { data, isFetching } = useGetCryptosQuery(10);
+    const { data, isFetching } = useGetCryptosQuery(count);
 
     
     const [search, setSearch] = useState('');
@@ -57,6 +57,6 @@ export default Cryptocurrencies
  * 1. 将请求的数据作为useState的初始值(请求的数据异步获取的...)
  * 2. 将state的初始值用作初始渲染ui
  * 3. 接受props--> simplified作为参数,对state状态做出改变
- * 4. 新增search,动态改变(enter改变)
+ * 4. 新增search,动态改变(enter改变) ---- 改变本地state状态值
  * 
  */
