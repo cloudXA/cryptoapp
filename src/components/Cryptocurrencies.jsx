@@ -7,7 +7,7 @@ import millify from 'millify';
 const Cryptocurrencies = ({ simplified }) => {
     const count = simplified ? 10 : 100;
     const { data, isFetching } = useGetCryptosQuery(count);
-
+    console.log(data, 'data')
     
     const [search, setSearch] = useState('');
     const [cryptos, setCryPtos] = useState(data?.data?.coins);
@@ -30,8 +30,8 @@ const Cryptocurrencies = ({ simplified }) => {
             { !simplified && <Input onPressEnter={searchCrypto} placeholder='search cryptocurriencs' size='middle' allowClear />}
             <Row gutter={[30, 30]} className='crypto-card-container' style={{ marginRight: 0}}>
                 {cryptos?.map((currency) => (
-                    <Col className="crypto-card" key={currency.id} xs={24} sm={12} lg={6} style={{ marginRight: 0, marginLeft: 0}}>
-                        <Link to={`/crypto/${currency.id}`}>
+                    <Col className="crypto-card" key={currency.uuid} xs={24} sm={12} lg={6} style={{ marginRight: 0, marginLeft: 0}}>
+                        <Link to={`/crypto/${currency.uuid}`}>
                             <Card
                                 title={`${currency.rank}. ${currency.name}`}
                                 extra={<img className='crypto-img' src={currency.iconUrl} width={30} height={30} />}

@@ -32,6 +32,27 @@
                 margin-top: 10px;
             }
         }
+        .coin-detail-container {
+            display: flex;
+            justify-content: center;
+            .coin-heading-container {
+                text-align: center;
+            }
+        }
+        .stats-container {
+            .coin-stats {
+                display: flex;
+                width: 50%;
+                justify-content: space-between;
+                .coin-stats-name {
+                    width: 70%;
+                    display: flex;
+                    align-items: center;
+                    
+                    justify-content: space-between;
+                }
+            }
+        }
     }
     
 }
