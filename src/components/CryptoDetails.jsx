@@ -1,24 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import HTMLReactParser from 'html-react-parser';
 import { useParams } from 'react-router-dom';
 import millify from 'millify';
 import { Col, Row, Typography, Select } from 'antd';
+import LineChart from './lineChart';
 import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, NumberOutlined, ThunderboltFilled, TrophyFilled, ExclamationCircleFilled, CheckOutlined } from '@ant-design/icons';
 
 
-import { useGetCryptoDetailsQuery } from '../services/cryptoApi';
+import { useGetCryptoDetailsQuery, useGetCryptoHistoryQuery } from '../services/cryptoApi';
 
 const { Title, Text } = Typography;
 const { Option } = Select;
 
 const CryptoDetails = () => {
+    const [timePeriod, setTimePeriod] = useState('7d');
+
     const { coinId } = useParams();
 
     const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
 
+    const { data: history } = useGetCryptoHistoryQuery({coinId, timePeriod});
+
     const CryptoDetails = data?.data?.coin;
 
-    console.log(CryptoDetails, 'cry')
+    if(isFetching) return 'Loading....';
 
     const times = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y'];
 
@@ -59,7 +64,7 @@ const CryptoDetails = () => {
     ]
 
     const handleChange = (value) => {
-        console.log(value.value, 'value')
+        setTimePeriod(value.value);
     }
 
     return (
@@ -90,6 +95,7 @@ const CryptoDetails = () => {
                 </Select>
             }
             {/* line chart  */}
+            <LineChart coinHistory={history?.data?.history} coinName={CryptoDetails?.name} currentPrice={CryptoDetails?.price} />
 
             <Row justify='space-between' >
                 <Col className='stats-container' lg={10} sm={24} style={{ padding: '30px'}}>
@@ -184,7 +190,8 @@ export default CryptoDetails
  *          3. 左右布局(响应式设计)
  *      2. useParams钩子获取路由参数(作为组件的入参)
  *      3. 基于入参请求ajax数据，获取新的数据
- *      4. 设计state
+ *      4. 设计state---select选择作为变化的值，作为state --- 为useGetCryptoHistoryQuery的入参
+ * 
  *      
  * 2. UI层数据渲染
  *      1. 对获取的数据进行渲染[hight： HTMLReactParser(...)]
