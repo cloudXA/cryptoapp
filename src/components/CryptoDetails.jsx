@@ -91,8 +91,8 @@ const CryptoDetails = () => {
             }
             {/* line chart  */}
 
-            <Row gutter={[12, 12]} >
-                <Col className='stats-container' lg={12} sm={24}>
+            <Row justify='space-between' >
+                <Col className='stats-container' lg={10} sm={24} style={{ padding: '30px'}}>
                     <Col className='coin-value-statistics'>
                         <Col className='coin-value-statistics-heading'>
                             <Title level={3} className='coin-detailed'>
@@ -106,7 +106,7 @@ const CryptoDetails = () => {
                             stats.map(({ title, value, icon }) => (
                                 <Col className='coin-stats'>    
                                     <Col className='coin-stats-name'>
-                                        <Text>{icon}</Text>
+                                        <Text className='coin-stats-icon'>{icon}</Text>
                                         <Text>{title}</Text>
                                     </Col>
                                     <Text className='stats'>{value}</Text>
@@ -116,7 +116,7 @@ const CryptoDetails = () => {
                     </Col>
                 </Col>
 
-                <Col className='generic-stats-container'>
+                <Col className='generic-stats-container' lg={10} sm={24} style={{ padding: '30px'}}>
                     <Col className='coin-value-statistics'>
                         <Col className='coin-value-statistics-heading'>
                             <Title level={3} className='coin-detailed'>
@@ -130,7 +130,7 @@ const CryptoDetails = () => {
                             genericStats?.map(({ title, value, icon }) => (
                                 <Col className='coin-stats'>
                                     <Col className='coin-stats-name'>
-                                        <Text>{icon}</Text>
+                                        <Text className='coin-stats-icon'>{icon}</Text>
                                         <Text>{title}</Text>
                                     </Col>
                                     <Text className='stats'>{value}</Text>
@@ -142,32 +142,32 @@ const CryptoDetails = () => {
 
             </Row>
 
-
-            <Col className='coin-desc-link'>
-                <Row className='coin-desc'>
+            <Row className='coin-desc'  justify='space-between'>
+                <Col lg={10} sm={24} style={{ padding: '30px'}}>
                     <Title level={3} className='coin-details-heading'>
                         What is {CryptoDetails?.name}
-                        {HTMLReactParser(CryptoDetails?.description || '')}
                     </Title> 
-                </Row>
-                <Col className='coin-links'>
+                    {HTMLReactParser(CryptoDetails?.description || '')}    
+                </Col>
+                
+                <Col className='coin-links' lg={10} sm={24} style={{ padding: '30px'}}>
                     <Title levle={3} className='coin-details-heading'>
                         {CryptoDetails?.name} Links
                     </Title>
                     {
                         CryptoDetails?.links?.map((link) => (
-                            <Row className='coin-link' key={link?.name}>
+                            <Row className='coin-link' key={link?.name}  justify='space-between' style={{ width: '100%'}}>
                                 <Title level={5} className='link-name'>
                                     {link?.type}
                                 </Title>
-                                <a href={link?.url} target='_blank' rel='noreferrer'>
+                                <a href={link?.url} target='_blank' rel='noreferrer' style={{ color: '#29afeb'}}>
                                     {link?.name}
                                 </a>
                             </Row>
                         ))
                     }
                 </Col>
-            </Col>
+            </Row>
         </>
         
     )
