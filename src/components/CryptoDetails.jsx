@@ -68,7 +68,7 @@ const CryptoDetails = () => {
     }
 
     return (
-        <>
+        <div className='crypto-detail-container'>
             <Col className='coin-detail-container'>
                 <Col className='coin-heading-container'>
                     <Title level={2} className='coin-name'>
@@ -86,8 +86,9 @@ const CryptoDetails = () => {
                     showSearch
                     labelInValue
                     defaultValue={'7d'}
-                    style={{ width: 200 }}
+                    className='select-coin'
                     onChange={handleChange}
+                    style={{ width: '80%' }}
                 >
                     {
                         times?.map(time => (<Option key={time} value={time}>{time}</Option>))
@@ -98,7 +99,7 @@ const CryptoDetails = () => {
             <LineChart coinHistory={history?.data?.history} coinName={CryptoDetails?.name} currentPrice={CryptoDetails?.price} />
 
             <Row justify='space-between' >
-                <Col className='stats-container' lg={10} sm={24} style={{ padding: '30px'}}>
+                <Col className='stats-container' lg={10} sm={24} style={{ padding: '30px', width: '200%'}}>
                     <Col className='coin-value-statistics'>
                         <Col className='coin-value-statistics-heading'>
                             <Title level={3} className='coin-detailed'>
@@ -157,12 +158,12 @@ const CryptoDetails = () => {
                 </Col>
                 
                 <Col className='coin-links' lg={10} sm={24} style={{ padding: '30px'}}>
-                    <Title levle={3} className='coin-details-heading'>
+                    <Title level={3} className='coin-details-heading'>
                         {CryptoDetails?.name} Links
                     </Title>
                     {
                         CryptoDetails?.links?.map((link) => (
-                            <Row className='coin-link' key={link?.name}  justify='space-between' style={{ width: '100%'}}>
+                            <Row className='coin-link' key={link?.name}  justify='space-between'>
                                 <Title level={5} className='link-name'>
                                     {link?.type}
                                 </Title>
@@ -174,7 +175,7 @@ const CryptoDetails = () => {
                     }
                 </Col>
             </Row>
-        </>
+        </div>
         
     )
 }

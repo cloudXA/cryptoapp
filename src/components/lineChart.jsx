@@ -24,7 +24,7 @@ import {
 
 const LineChart = ({coinHistory, coinName, currentPrice}) => {
     const coinPrice = coinHistory?.map(coin => coin?.price);
-    const coinTimestamp = coinHistory?.map(coin => new Date(coin?.timestamp * 1000)?.toUTCString());
+    const coinTimestamp = coinHistory?.map(coin => new Date(coin?.timestamp * 1000)?.toLocaleDateString());
 
     const data = {
         labels: coinTimestamp,

@@ -28,9 +28,9 @@ const Cryptocurrencies = ({ simplified }) => {
     return (
         <>
             { !simplified && <Input onPressEnter={searchCrypto} placeholder='search cryptocurriencs' size='middle' allowClear />}
-            <Row gutter={[30, 30]} className='crypto-card-container' style={{ marginRight: 0}}>
+            <Row gutter={[20, 30]} className='crypto-card-container' style={{ marginRight: 0}}>
                 {cryptos?.map((currency) => (
-                    <Col className="crypto-card" key={currency.uuid} xs={24} sm={12} lg={6} style={{ marginRight: 0, marginLeft: 0}}>
+                    <Col className="crypto-card" key={currency.uuid} xs={24} sm={12} lg={6} style={{ marginRight: 0}}>
                         <Link to={`/crypto/${currency.uuid}`}>
                             <Card
                                 title={`${currency.rank}. ${currency.name}`}
